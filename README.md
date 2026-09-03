@@ -1,8 +1,8 @@
-# TransDG
+# adaptive-domain-graph-for-DG
 
 ## Commonality without Uniformity: Domain Generalization via Transitive Knowledge Transfer over Adaptive Domain Graph
 
-TransDG addresses over-invariance and dominant-domain bias in domain
+adaptive-domain-graph-for-DG addresses over-invariance and dominant-domain bias in domain
 generalization. Instead of collapsing all source domains into a single
 representation, the method constructs class-domain prototypes that preserve
 class-consistent domain variation. Interpolated and extrapolated pseudo-domain
@@ -54,7 +54,7 @@ corresponding result was not reported by the cited method.
 | StyLIP | CLIP ViT-B/32 | 98.17 | 87.21 | 85.94 | 80.43 | - |
 | ODG-CLIP | CLIP ViT-B/32 | 99.83 | 95.74 | 96.91 | 96.65 | 67.55* |
 | SeeCLIP | CLIP ViT-B/32 | 99.89 | 96.52 | 97.43 | 97.28 | 68.20* |
-| **TransDG** | **CLIP ViT-B/32** | **99.93** | **96.89** | **98.61** | **98.53** | **74.27** |
+| **ours** | **CLIP ViT-B/32** | **99.93** | **96.89** | **98.61** | **98.53** | **74.27** |
 
 `*` denotes our reproduction on TerraIncognita. The remaining baseline entries
 follow the values cited in the main manuscript.
@@ -78,10 +78,10 @@ within each target domain and then macro-averaged over targets and seeds.
 |---|---|---:|---:|---:|---:|---:|
 | OfficeHome | Unified class center | 94.37 | 93.19 | 90.98 | 92.84 | 3.39 |
 | OfficeHome | Class-domain prototypes | 97.16 | 95.73 | 92.91 | 95.26 | 4.25 |
-| OfficeHome | **Full TransDG** | **99.04** | **98.86** | **97.93** | **98.61** | **1.11** |
+| OfficeHome | **Full ours** | **99.04** | **98.86** | **97.93** | **98.61** | **1.11** |
 | TerraIncognita | Unified class center | 68.51 | 61.82 | 50.76 | 60.37 | 17.75 |
 | TerraIncognita | Class-domain prototypes | 74.68 | 67.04 | 53.71 | 65.14 | 20.97 |
-| TerraIncognita | **Full TransDG** | **79.33** | **74.16** | **69.34** | **74.27** | **9.99** |
+| TerraIncognita | **Full ours** | **79.33** | **74.16** | **69.34** | **74.27** | **9.99** |
 
 ![Target-wise high-to-low affinity accuracy gaps](assets/affinity_gap.svg)
 
@@ -98,10 +98,10 @@ fixed. `Drop` is the decrease from `1:1:1` to `16:1:1`.
 |---|---|---:|---:|---:|---:|---:|
 | OfficeHome | CLIP-LP | 80.35 &plusmn; 0.07 | 79.97 &plusmn; 0.06 | 77.16 &plusmn; 0.06 | 73.89 &plusmn; 0.08 | 6.08 |
 | OfficeHome | ODG-CLIP | 96.91 &plusmn; 0.06 | 96.52 &plusmn; 0.04 | 94.96 &plusmn; 0.03 | 92.79 &plusmn; 0.07 | 3.74 |
-| OfficeHome | **TransDG** | **98.61 &plusmn; 0.07** | **98.34 &plusmn; 0.08** | **97.37 &plusmn; 0.07** | **96.59 &plusmn; 0.05** | **1.76** |
+| OfficeHome | **ours** | **98.61 &plusmn; 0.07** | **98.34 &plusmn; 0.08** | **97.37 &plusmn; 0.07** | **96.59 &plusmn; 0.05** | **1.76** |
 | TerraIncognita | CLIP-LP | 37.48 &plusmn; 0.05 | 36.60 &plusmn; 0.14 | 33.21 &plusmn; 0.12 | 28.52 &plusmn; 0.09 | 8.08 |
 | TerraIncognita | ODG-CLIP | 67.55 &plusmn; 0.04 | 66.99 &plusmn; 0.09 | 63.80 &plusmn; 0.17 | 60.28 &plusmn; 0.01 | 6.71 |
-| TerraIncognita | **TransDG** | **74.27 &plusmn; 0.05** | **74.00 &plusmn; 0.03** | **70.96 &plusmn; 0.06** | **68.52 &plusmn; 0.11** | **5.48** |
+| TerraIncognita | **ours** | **74.27 &plusmn; 0.05** | **74.00 &plusmn; 0.03** | **70.96 &plusmn; 0.06** | **68.52 &plusmn; 0.11** | **5.48** |
 
 ![Accuracy degradation under increasingly imbalanced source domains](assets/source_imbalance.svg)
 
@@ -317,7 +317,7 @@ TransDG/
   smoke_test.py      lightweight implementation checks
   requirements.txt   Python dependencies
   NOTICE.md          notice for CLIP-derived source files
-  LICENSE            MIT license for the original TransDG code
+  LICENSE            MIT license for the original ours code
 ```
 
 ## License
